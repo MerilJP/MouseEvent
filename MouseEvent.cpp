@@ -1,23 +1,23 @@
 #include "RandomMouseMove.h"
 
 
-//ƒRƒ“ƒXƒgƒ‰ƒNƒ^ ƒƒ“ƒoƒCƒjƒVƒƒƒ‰ƒCƒU
+//ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 CMouseEvent::CMouseEvent() : nMovement(5),nTime(100)
 {
 }
 
-//ƒfƒXƒgƒ‰ƒNƒ^
+//ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 CMouseEvent::~CMouseEvent()
 {
 }
 
 
-//ƒ}ƒEƒX‚ğˆÚ“®‚³‚¹‚éƒƒ\ƒbƒh
+//ãƒã‚¦ã‚¹ã‚’ç§»å‹•ã•ã›ã‚‹ãƒ¡ã‚½ãƒƒãƒ‰
 void CMouseEvent::MouseActive() 
 {
 	
 	while (true) {
-		//Œ»İ‚ÌƒJ[ƒ\ƒ‹ˆÊ’u‚ğæ“¾
+		//ç¾åœ¨ã®ã‚«ãƒ¼ã‚½ãƒ«ä½ç½®ã‚’å–å¾—
 		GetCursorPos(&ptr);
 		switch (getRNumber(1, 4))
 		{
