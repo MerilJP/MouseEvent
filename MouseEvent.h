@@ -2,41 +2,41 @@
 #include <Windows.h>
 #include <random>
 
-#ifndef __RandomMouseMove_h_
-#define __RandomMouseMove_h_
+#ifndef __MouseEvent_h_
+#define __MouseEvent_h_
 
 class CMouseEvent {
 public:
 
-	//�R���X�g���N�^
+	//コンストラクタ
 	CMouseEvent();
-	//�f�X�g���N�^
+	//デストラクタ
 	~CMouseEvent();
 
-	//�J�[�\���̈ړ��ʂ����߂郁�\�b�h(px)
+	//カーソルの移動量を決めるメソッド(px)
 	void setMovement(int amount) 
 	{
 		nMovement = amount;
 	}
 	
-	//�ړ����Ԃ̊Ԋu�����߂郁�\�b�h(ms)
+	//移動時間の間隔を決めるメソッド(ms)
 	void setMovementTime(int sec) 
 	{
 		nTime = sec;
 	}
 
-	//�}�E�X���ړ������郁�\�b�h
+	//マウスを移動させるメソッド
 	void MouseActive();
 
 private:
 
-	//�J�[�\�����ړ����郁�\�b�h
+	//カーソルを移動するメソッド
 	void Movement(int x, int y) 
 	{
 		SetCursorPos(ptr.x + x, ptr.y + y);
 	}
 
-	//������Ԃ����\�b�h
+	//乱数を返すメソッド
 	inline int getRNumber(int a, int b) const throw()
 	{
 		std::random_device rd;
@@ -46,7 +46,7 @@ private:
 		return nNumber(mt);
 	}
 
-	//�C���X�^���X�ϐ�
+	//インスタンス変数
 	POINT ptr;
 	int nMovement;
 	int nTime;
